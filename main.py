@@ -45,9 +45,9 @@ nx.draw_networkx(G, labels=labels, arrows=True,
 
 Alcance.confereAlcance()
 FeixoTransitivo.transitive_closure()
-menorCaminhoPorCrianca = MenorCaminho.menorCaminho(7)
+menorCaminhoPorCrianca = MenorCaminho.menorCaminho(14)
 
-amizade = ProximaAmizade.poximoAmigo(menorCaminhoPorCrianca, 7)
+amizade = ProximaAmizade.poximoAmigo(menorCaminhoPorCrianca, 14)
 print("Próxima amizade é " + labels[amizade])
 
 plt.title("Grafo das amizades da escola Elisa")
