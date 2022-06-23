@@ -71,7 +71,7 @@ class Graph:
             print(("%d" % dist[i]) if dist[i] != float("Inf") else "Inf", end=" ")
 
 
-def menorCaminho():
+def menorCaminho(s):
     g = Graph(16)
 
     g.addEdge(0, 2, 1)
@@ -130,8 +130,6 @@ def menorCaminho():
     g.addEdge(15, 14, 1)
     g.addEdge(15, 5, 1)
     g.addEdge(15, 9, 1)
-
-    s = 7
 
     print("Following are shortest distances from source %d " % s)
     g.shortestPath(s)

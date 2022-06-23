@@ -38,10 +38,13 @@ labels = {0: "Agnese",
           12: "Matteo", 13: "Nicoletta", 14: "Pierfrancesco", 15: "Simone"}
 
 nx.draw_networkx(G, labels=labels, arrows=True,
-                 node_shape="s", node_color="white")
+                 node_shape="s", node_size=1200,
+                 node_color="white",
+                 )
 
 Alcance.confereAlcance()
 FeixoTransitivo.transitive_closure()
-MenorCaminho.menorCaminho()
+MenorCaminho.menorCaminho(7)
 
+plt.title("Grafo das amizades da escola Elisa")
 plt.show()
