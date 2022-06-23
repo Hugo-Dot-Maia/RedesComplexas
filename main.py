@@ -5,9 +5,10 @@ import numpy as np  # linear algebra
 import os  # accessing directory structure
 import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import networkx as nx
-
-
-
+import GraficoAmigos
+import Alcance
+import FeixoTransitivo
+import MenorCaminho
 
 G = nx.DiGraph()
 nodes = np.arange(0, 15).tolist()
@@ -38,5 +39,9 @@ labels = {0: "Agnese",
 
 nx.draw_networkx(G, labels=labels, arrows=True,
                  node_shape="s", node_color="white")
+
+Alcance.confereAlcance()
+FeixoTransitivo.transitive_closure()
+MenorCaminho.menorCaminho()
 
 plt.show()
