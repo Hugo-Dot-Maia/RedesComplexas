@@ -1,22 +1,13 @@
-# A class to represent a graph object
 class Graph:
     def __init__(self, edges, n):
-        # A list of lists to represent an adjacency list
         self.adjList = [[] for _ in range(n)]
 
-        # add edges to the directed graph
         for (src, dest) in edges:
             self.adjList[src].append(dest)
 
 
-# `C` is a connectivity matrix and stores transitive closure of a graph
-# `root` is the topmost node in DFS tree (it is the starting vertex of DFS)
-# `descendant` is current vertex to be explored in DFS.
-# Invariant: A path already exists in the graph from `root` to `descendant`
 def DFS(graph, C, root, descendant):
     for child in graph.adjList[descendant]:
-        # if `child` is an adjacent vertex of descendant, we have
-        # found a path from root->child
         if C[root][child] == 0:
             C[root][child] = 1
             DFS(graph, C, root, child)
@@ -46,10 +37,7 @@ def confereAlcance():
 
     C = [[0 for x in range(n)] for y in range(n)]
 
-    # consider each vertex and start DFS from it
     for v in range(n):
         C[v][v] = 1
         DFS(graph, C, v, v)
-
-        # print path info for vertex `v`
         print(C[v])
