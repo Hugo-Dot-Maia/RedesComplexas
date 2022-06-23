@@ -67,8 +67,12 @@ class Graph:
                     dist[node] = dist[i] + weight
 
         # Print the calculated shortest distances
+        retorno = []
         for i in range(self.V):
+            retorno.append(dist[i])
             print(("%d" % dist[i]) if dist[i] != float("Inf") else "Inf", end=" ")
+
+        return retorno
 
 
 def menorCaminho(s):
@@ -132,4 +136,4 @@ def menorCaminho(s):
     g.addEdge(15, 9, 1)
 
     print("Following are shortest distances from source %d " % s)
-    g.shortestPath(s)
+    return g.shortestPath(s)
